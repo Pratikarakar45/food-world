@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-serves</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- faicon -->
+    <link rel="shortcut icon" href="img/brand_logo.png" type="image/x-icon">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin: 0;padding: 0;box-sizing: border-box;
+    font-family: 'Kadwa', serif;
+    scroll-behavior: smooth;
+}
+p{
+    font-weight: 300;
+    color: #111;
+}
+span{
+    color: #ff0157;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701575042.jpg");
+    background-size: cover;
+}
+.banner .content{
+    max-width: 900px;
+    text-align: center;
+}
+.banner .content h2{
+    font-size: 4em;
+    color: whitesmoke;
+}
+.banner .content p{
+font-size: 1em ;
+color: whitesmoke;
+}
+.btn{
+    font-size: 1em;
+    color: whitesmoke;
+    background: #ff0157;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 15px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+.btn:hover{
+    letter-spacing: 5px;
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    padding: 15px 40px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+header.sticky{
+    background: #fff;
+    padding: 10px 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.082);
+}
+header .logo{
+    width:10vmin
+}
+header.sticky .logo{
+    width: 7vmin;
+}
+header .navigation{
+    display: flex;
+}
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+header .navigation li a{
+    text-decoration: none;
+    color:whitesmoke;
+    font-weight:300 ;
+}
+header.sticky .navigation li a{
+    color: #111;
+}
+header .navigation li a:hover{
+    color:#ff0157;
+}
+
+/* about */
+section{
+    padding: 100px;
+}
+.row
+{
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+.row .col50{
+    position: relative;
+    width: 48%;
+}
+.title-text{
+    color: #111;
+    font-size: 2em;
+    font-weight: 300;
+}
+.row .col50 .imgBx{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+.row .col50 .imgBx img{
+    position: absolute;
+    top: 0;left: 0;width: 100%;height: 100%;
+    object-fit: cover;
+}
+
+/* menu */
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.menu .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.menu .content .box{
+    width: 250px;
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.185);
+}
+.menu .content .box .imgBx {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.menu .content .box .imgBx img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.menu .content .box .text{
+padding: 15px 0 5px 0;
+text-align: center;
+}
+.menu .content .box .text h3{
+    font-weight:400 ;
+    color: #111;
+}
+
+/* experties */
+.expert .content{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+flex-direction: row;
+margin-top: 30px ;
+}
+.expert .content .box{
+    width:200px;
+    margin: 15px;
+}
+.expert .content .box .imgBx{
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+.expert .content .box .imgBx img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.expert .content .box .text{
+    padding: 15px 0 5px 0;
+    text-align: center;
+    }
+.expert .content .box h3{
+    font-weight:400 ;
+    color: #111;
+}
+
+/* testimonial */
+.testimonial{
+    background: url("https://cdn.pixabay.com/photo/2017/06/06/22/37/italian-cuisine-2378729_1280.jpg");
+    background-size: cover;
+}
+.white .title-text, .white p{
+    color: whitesmoke;
+}
+.testimonial .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.testimonial .content .box{
+    width: 290px;
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.testimonial .content .box .imgBx{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.testimonial .content .box .imgBx img{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.testimonial .content .box .text {
+    text-align: center;
+}
+.testimonial .content .box .text p{
+    color: #666;
+    font-style: italic;
+}
+.testimonial .content .box h3{
+    margin-top: 20px;
+    color:#ff0157;
+    font-size:1em;
+    font-weight: 600;
+}
+
+/* contact */
+.contact{
+ background: url("https://images.ctfassets.net/grb5fvwhwnyo/1sJpRsfp1RJI3AASMiOS1h/d5cca0a1c5d78df3052659f2b56a1225/SEO-Food-Fresh-Groceries.png");
+background-size: cover;
+}
+.contact .title{
+    margin-bottom: 30px;
+}
+.contactForm{
+    padding: 35px 50px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.317);
+    max-width:  400px ;
+
+    border-radius: 20px;
+}
+.contactForm h3{
+color: #111;
+font-size: 1.2em;
+margin-bottom: 20px;
+font-weight: 600;
+}
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+} 
+.contactForm .inputBox input,.contactForm .inputBox textarea{
+    width: 100%;
+    border: 2px solid #555;
+    padding: 5px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    resize: none;
+}
+.contactForm .inputBox input[type="submit"]
+{
+    font-size: 1em;
+    color: #fff;
+    background: #ff0157;
+    display: inline-block;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 100px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* copyrightText */
+.copyrightText{
+    padding: 8px 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.233);
+    text-align: center;
+}
+
+@media screen and (max-width: 991px){
+    header,header.sticky{
+        padding: 10px 20px;
+    }
+    header .navigation{
+        display: none;
+    }
+    .menuToggle{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url("https://cdn.icon-icons.com/icons2/1744/PNG/512/3643763-list-mark-menu-option-sign_113447.png");
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    .menuToggle.active{
+        background: url("https://media.istockphoto.com/id/857112152/vector/close-thin-line-vector-icon.jpg?s=612x612&w=0&k=20&c=gFs1EgxLxPhzgxILUCN80n8A5nN3dwhqxUmhb3hsTBE=");
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header.sticky .menuToggle{
+        filter: invert(1);
+    }
+}
+</head>
+</style>
+
+<body>
+    <header>
+        <img src="https://image.similarpng.com/very-thumbnail/2021/07/Chef-restaurant-logo-illustrations-template-on-transparent-background-PNG.png" alt="V-serves" class="logo">
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#expert">Expert</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Always Choose Good</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto exercitationem necessitatibus
+                alias modi, repellendus id? Facilis assumenda voluptatem odio impedit aliquam, ipsam ratione vitae,
+                repellat eligendi officia, quae corrupti.</p>
+            <a href="#" class="btn">Our Menu</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col50">
+                <h2 class="title-text"><span>A</span>bout Us</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur ratione provident saepe explicabo
+                    ex ipsam ad quam amet. Cupiditate, quia ipsa quae dolore obcaecati architecto ex earum ratione
+                    reprehenderit maiores. <br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non,
+                    incidunt placeat repellat quis recusandae rem earum sit expedita. Quos ea maiores aspernatur sunt
+                    numquam commodi dolorum, quasi sed fuga culpa?</p>
+            </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="https://b.zmtcdn.com/data/pictures/8/19813408/591434a707983edd9f96313d82303e2e_o2_featured_v2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="title">
+            <h2 class="title-text">Our <span>M</span>enu</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://amritsruae.com/blog/wp-content/uploads/2021/01/chicken-biryani-benefits-main.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Biryani</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://media.istockphoto.com/id/508345848/photo/grilled-chicken-legs.jpg?s=170667a&w=0&k=20&c=QOvW1QSR3isONy4fXGItHU6WSZfON5lhVKXj3ohzbaE=" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Chicken</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/9e/05/d1/grilled-prawn.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Sea Food</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://eating-made-easy.com/wp-content/uploads/2015/07/1-620x415.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://iowagirleats.com/wp-content/uploads/2012/09/DSC_1499.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special soup</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://media.istockphoto.com/id/857927726/photo/pasta-with-meat-tomato-sauce-and-vegetables.jpg?s=612x612&w=0&k=20&c=1bcoXcBKM7Hb1ASweDx-vcwXEgy-WrCGM71dVP2Cp0w=" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special pasta</h3>
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <a href="#" class="btn">View All</a>
+
+        </div>
+    </section>
+    <section class="expert" id="expert">
+        <div class="title">
+            <h2 class="title-text">Our Kitchen <span>E</span>xpert</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/IF/RH/BN/52987365/fast-food-cook-service-500x500.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://www.nzherald.co.nz/resizer/ygWhBGyg8hQbVTEQcvjtKdiTor4=/640x0/smart/filters:quality(70)/cloudfront-ap-southeast-2.images.arcpublishing.com/nzme/KRFUYL6JAWHQ5H2JQCOEVTBEZM.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAp2P_LO1lcfPOoHdcjp6vYWi4AGRftDxa4A&usqp=CAU" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://images.delightedcooking.com/slideshow-mobile-small/chef-creating-dish.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="testimonial" id="testimonial">
+        <div class="title white">
+            <h2 class="title-text">They <span>S</span>aid About us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://t4.ftcdn.net/jpg/02/77/75/81/360_F_277758134_N1DrPaZUdmXarAC1R5d624FkNZ1qD0hR.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero sed, accusamus temporibus fuga
+                        voluptatibus nobis esse?</p>
+                </div>
+                <h3>Someone Famous</h3>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAxpNtRUV17JpMDBWaRcBnAewOTZLOOoOH7g&usqp=CAU" alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero sed, accusamus temporibus fuga
+                        voluptatibus nobis esse?</p>
+                </div>
+                <h3>Someone Famous</h3>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvLXv9HHEuMbv36MF_IOfJ5obfNJigiFQ81Q&usqp=CAU" alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero sed, accusamus temporibus fuga
+                        voluptatibus nobis esse?</p>
+                </div>
+                <h3>Someone Famous</h3>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="title ">
+            <h2 class="title-text"><span>C</span>ontact Us </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="contactForm">
+            <h3>Send Message</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <textarea placeholder="feedback"></textarea>
+            </div>
+            <div class="inputBox">
+                 <button class="inputBox">Send</button>
+                
+            </div>
+        </div>
+    </section>
+    <div class="copyrightText">
+        <p>copyright &copy; V-serves</p>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector('header')
+            header.classList.toggle('sticky', window.scrollY > 0)
+        })
+
+        function toggleMenu(){
+            const menuToggle = documnet.querySelector('.menuToggle');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
